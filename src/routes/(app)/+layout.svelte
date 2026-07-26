@@ -173,6 +173,21 @@
                     />
                     Show file thumbnails
                 </label>
+                <label class="option">
+                    <input
+                        type="checkbox"
+                        id="file-showthumb"
+                        name="file-showthumb"
+                        bind:checked={$userSettings.longID}
+                        on:change={saveSettings}
+                    />
+                    Generate long file id&nbsp;
+                    <span
+                        class="tooltip"
+                        title="Makes files harder to guess."
+                        >( ? )</span
+                    >
+                </label>
             </div>
         </details>
 

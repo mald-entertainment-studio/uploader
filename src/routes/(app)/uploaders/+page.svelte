@@ -13,11 +13,23 @@
         object: `${url}/api/object`,
     };
 
+    let query = "";
+
     $: {
+        const params = [];
+
         if ($userSettings.fileContentDisposition) {
             sharexConfigURL.searchParams.delete("skip-cd");
         } else {
             sharexConfigURL.searchParams.set("skip-cd", "true");
+            params.push("skip-cd=true");
+        }
+
+        if ($userSettings.longID) {
+            sharexConfigURL.searchParams.set("long-id", "true");
+            params.push("long-id=true")
+        } else {
+            sharexConfigURL.searchParams.delete("long-id");
         }
 
         if ($userSettings.appendFileExt) {
@@ -26,6 +38,8 @@
             sharexConfigURL.searchParams.delete("ext");
         }
         sharexConfigURL = sharexConfigURL;
+
+        query = params.length > 0 ? "?" + params.join("&") : "";
     }
 </script>
 
@@ -53,9 +67,7 @@
                 <tr>
                     <th>Request URL:</th>
                     <td
-                        >{endpoints.upload}{!$userSettings.fileContentDisposition
-                            ? "?skip-cd=true"
-                            : ""}</td
+                        >{endpoints.upload}{query}</td
                     >
                 </tr>
                 <tr>

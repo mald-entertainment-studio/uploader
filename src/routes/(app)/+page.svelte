@@ -142,9 +142,14 @@
                 if (++completed >= files.length) uploadProgress = null;
             });
 
+            const params = [];
+            if (!$userSettings.fileContentDisposition) params.push("skip-cd=true");
+            if ($userSettings.longID) params.push("long-id=true");
+            const query = params.length > 0 ? "?" + params.join("&") : "";
+
             xhr.open(
                 "POST",
-                `${dev ? "http://localhost:8787" : ""}/api/upload${!$userSettings.fileContentDisposition ? "?skip-cd=true" : ""}`,
+                `${dev ? "http://localhost:8787" : ""}/api/upload${query}`,
                 true,
             );
 

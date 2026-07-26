@@ -7,6 +7,7 @@ const defaultSettings = {
     "fileContentDisposition": true,
     "stripExif": false,
     "showThumbnails": true,
+    "longID": false,
     "theme": "dark"
 }
 

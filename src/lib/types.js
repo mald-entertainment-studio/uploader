@@ -21,6 +21,7 @@
  * @property {Boolean} fileContentDisposition
  * @property {Boolean} stripExif
  * @property {Boolean} showThumbnails
+ * @property {Boolean} longID
  * @property {Theme} theme
  */
 
