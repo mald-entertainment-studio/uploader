@@ -18,5 +18,5 @@
 <p><strong>5. User Rights:</strong> You have the right to request information about your data and to request its deletion.</p>
 <p>Your use of the Service implies acceptance of these Terms and this Privacy Policy.</p>
 <p>We reserve the right to amend these Terms and the Privacy Policy at any time without notice.</p>
-<p><strong>Contact: request@segs.lol</strong></p>
+<p><strong>Contact: request@menstudio.eu</strong></p>
 <p><strong>Last Updated: June 23, 2025</strong></p>

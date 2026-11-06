@@ -12,7 +12,7 @@ const config = {
             strict: true,
         }),
         prerender: {
-            origin: "https://segs.lol",
+            origin: "https://kappa.lol",
         }
     },
 };
