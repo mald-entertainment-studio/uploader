@@ -2,6 +2,7 @@
     import { page } from "$app/stores";
     import Dialog from "$lib/components/Dialog.svelte";
     import Terms from "$lib/components/Terms.svelte";
+    import Domains from "$lib/components/Domains.svelte";
     import { logError } from "$lib/components/errorLog";
     import Errors from "$lib/components/Errors.svelte";
     import { userSettings } from "$lib/userSettings";
@@ -26,6 +27,9 @@
 
     /** @type {HTMLDialogElement} */
     let tosDialog;
+
+    /** @type {HTMLDialogElement} */
+    let domainsDialog;
 
     /** @type {HTMLDialogElement} */
     let errorDialog;
@@ -228,6 +232,12 @@
     </section>
 </Dialog>
 
+<Dialog bind:node={domainsDialog}>
+    <section>
+        <Domains></Domains>
+    </section>
+</Dialog>
+
 <section>
     <p>
         <a
@@ -238,13 +248,16 @@
             }}>Terms and Privacy Policy</a
         >
     </p>
-    <!--
     <p class="maintenance">
-        ⚠️ Maintenance is in progress<br>
-        File uploading and deletion will be temporarily unavailable<br>
-        Estimated downtime is around X minutes
+        ⚠️ kappa.lol and segs.lol are frozen by the .lol TLD owner<br>
+        Meanwhile, use this domain or <a
+            href="/"
+            on:click={(e) => {
+                e.preventDefault();
+                domainsDialog.showModal();
+            }}>a different one</a
+        >
     </p>
-    -->
     <p>
         Max file size: 100 MiB<br />Drag or paste files anywhere on this page to
         start uploading
